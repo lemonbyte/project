@@ -6,16 +6,31 @@
 </head>
 <body>
 
-<p>DASHBOARD/p>
+<header class="project subhead">
 
-    <?php
-    if (count($this->messages) > 0) {
-        printf("<div id='flash'>%s</div>", $this->messages[0]);
-    }
-    ?>
+    <div class="container container-narrow">
+        <h1>Project Manager Dashboard </h1>
+    </div>
 
-<?php echo $this->layout()->content; ?>
+    <p>Welcome; <?php echo $this->id;?></p>
+    <a href="<?= $this->url(array(
+        'controller' => 'Login',
+        'action' => 'Logout')); ?>">Logout</a>
 
+    <?php if (count($this->messages) > 0) { printf("<div id='flash'>%s</div>", $this->messages[0]);} ?>
+
+</header>
+
+    <div class="container">
+    <?php echo $this->layout()->content; ?>
+    </div>
+
+
+<footer class="footer">
+    <div class="container container-narrow">
+    <p>Project Manager V.0.1 </p> <p>Support mail <?php echo $this->supportEmail;?></p></div>
+</footer>
 
 </body>
 </html>
+

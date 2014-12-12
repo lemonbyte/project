@@ -25,9 +25,9 @@ class mysql {
   }
 
    exec { 'load-sql':
-    command => 'mysql -u root -proot < /vagrant/sql/intranet.sql',
-    path    => ['/bin', '/usr/bin'],
-    require => Exec['set-mysql-password'];
+   command => 'mysql -u root -proot < /vagrant/Sql/database.sql',
+   path    => ['/bin', '/usr/bin'],
+   require => Exec['set-mysql-password'];
   }
 
 }

@@ -1,9 +1,9 @@
 <VirtualHost *:80>
     ServerName local.project.nl
-    DocumentRoot /var/www/public_html
+    DocumentRoot /var/www/project/public
     SetEnv APPLICATION_ENV "vagrant"
 
-    <Directory /var/www/public_html>
+    <Directory /var/www/project/public>
       allow from all
       Options +Indexes
     </Directory>

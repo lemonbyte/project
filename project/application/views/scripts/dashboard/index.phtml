@@ -1,0 +1,62 @@
+<div class="well intro-text">
+    <h3>-Status-</h3>
+    <p>
+        You have <?php echo count($this->doneprojects); ?> finished <?php echo (count($this->doneprojects) == 1) ? "project": "projects";?>
+    </p>
+    <p>
+        You have 0 open tasks.
+    </p>
+</div>
+
+<div class="row" style="margin-top:20px;margin-bottom:20px">
+    <div class="span12">
+        <table class="table table-bordered table-striped">
+            <tbody>
+            <tr>
+
+                <td width="50%">
+                    <ul class="menu">
+                        <h4>Overview of categories</h4>
+
+                        <?php if (count($this->categories) > 0){
+                            foreach($this->categories AS $result) {
+                                echo "<h5>{$result->Cat_name}</h5>"."<h6>-Creation Date "."{$result->CreationDate}</h6>";
+                            }
+                        }
+                        else{
+                            echo "No new categories";
+                        } ?>
+
+                    </ul>
+                </td>
+
+
+                <td width="50%">
+                    <h4>Overview of projects</h4>
+                    <h6>
+
+                        <a href="<?= $this->url(array(
+                            'controller' => 'Dashboard',
+                            'action' => 'create-New-Project')); ?>">Add an new project</a>
+
+                    </h6>
+                    <ul class="menu">
+
+                        <?php if (count($this->projects) > 0){
+                        foreach($this->projects AS $result) {
+
+                        echo "<li> <a href=''>"."{$result->ProjectName} ({$result->Description})"."</a></li>";
+                        }
+                        }
+                        else{
+                             echo "No new projects";
+                        } ?>
+
+                    </ul>
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

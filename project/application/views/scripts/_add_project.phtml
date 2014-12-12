@@ -1,18 +1,12 @@
-<div class="body"></div>
-<div class="grad"></div>
-<div class="header">
-    <div>Project<span>Manager</span></div>
-</div>
-<br>
-<div class="login">
 <form id="login" action="<?php $this->element->getAction(); ?>" method="<? echo $this->element->getMethod(); ?>">
-    <?php echo $this->element->email; ?>
+    <p>Project Name</p>
+    <?php echo $this->element->ProjectName; ?>
     <br/>
-    <?php echo $this->element->pswd; ?>
+    <p>Description</p>
+    <?php echo $this->element->Description; ?>
+    <br/>
+    <p>Catagorie</p>
+    <?php echo $this->element->Categorie; ?>
     <br/>
     <?php echo $this->element->submit; ?>
 </form>
-
-</div>
-
-<script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
