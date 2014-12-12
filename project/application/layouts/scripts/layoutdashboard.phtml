@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Project Manager</title>
+    <link rel="stylesheet" href="/css/dashboard.css" type="text/css" media="screen, projection">
+
+</head>
+<body>
+
+<p>DASHBOARD/p>
+
+    <?php
+    if (count($this->messages) > 0) {
+        printf("<div id='flash'>%s</div>", $this->messages[0]);
+    }
+    ?>
+
+<?php echo $this->layout()->content; ?>
+
+
+</body>
+</html>
